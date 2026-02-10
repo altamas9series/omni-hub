@@ -1,0 +1,196 @@
+{
+  "hero": {
+    "rotatingHeadlines": [
+      "Automate Chargeback Defense in Seconds",
+      "Predict Dispute Outcomes with AI",
+      "Reduce Manual Processing by 90%"
+    ],
+    "mainHeadline": "Turn Chargebacks from Losses into Wins",
+    "highlightedText": "AI-Powered Automation",
+    "subheadline": "Automated evidence generation and predictive analytics for FinTechs, payment processors, banks, and merchants.",
+    "stats": [
+      { "value": "85%", "label": "Faster Processing" },
+      { "value": "40%", "label": "Higher Win Rates" },
+      { "value": "$1.2M+", "label": "Revenue Recovered" }
+    ],
+    "ctaPrimary": "Start Free Trial",
+    "ctaSecondary": "Schedule a Demo",
+    "slides": [
+      {
+        "badge": "Automate Chargeback Defense in Seconds",
+        "mainHeadline": "Turn Chargebacks from Losses into Wins",
+        "highlightedText": "AI-Powered Automation",
+        "subheadline": "Automated evidence generation and predictive analytics for FinTechs, payment processors, banks, and merchants."
+      },
+      {
+        "badge": "Predict Dispute Outcomes with AI",
+        "mainHeadline": "Fight Smarter",
+        "highlightedText": "Not Harder",
+        "subheadline": "AI monitors disputes in real-time, flags and prioritizes cases by win probability. Evidence assembled and auto-submitted to banks and processors."
+      },
+      {
+        "badge": "Reduce Manual Processing by 90%",
+        "mainHeadline": "Evidence Assembled",
+        "highlightedText": "Automatically",
+        "subheadline": "Transaction records, communications, and delivery proof formatted into compelling case files. Scale without scaling headcount."
+      }
+    ]
+  },
+  "problems": [
+    {
+      "icon": "Clock",
+      "title": "Hours Per Dispute",
+      "description": "Manual evidence gathering takes 2-4 hours per dispute, draining your team's time and resources."
+    },
+    {
+      "icon": "FileX",
+      "title": "Inconsistent Documentation",
+      "description": "Poorly formatted or missing evidence leads to preventable losses on winnable disputes."
+    },
+    {
+      "icon": "TrendingDown",
+      "title": "No Scalable Solution",
+      "description": "High-volume disputes overwhelm teams without automated, scalable processing tools."
+    },
+    {
+      "icon": "EyeOff",
+      "title": "Zero Visibility",
+      "description": "No way to predict which disputes are worth fighting, wasting effort on unwinnable cases."
+    },
+    {
+      "icon": "Unplug",
+      "title": "Disconnected Systems",
+      "description": "Manual data entry across fragmented systems creates errors and delays at every step."
+    },
+    {
+      "icon": "ShieldAlert",
+      "title": "Fraudulent Chargebacks",
+      "description": "Merchants lose millions annually to friendly fraud with no effective tools to fight back."
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Connect Instantly",
+      "description": "Link your payment processors and bank APIs with one-click integrations. No engineering required.",
+      "icon": "Plug"
+    },
+    {
+      "step": 2,
+      "title": "AI Detects & Flags",
+      "description": "Our AI monitors disputes in real-time, automatically flagging and prioritizing cases by win probability.",
+      "icon": "Radar"
+    },
+    {
+      "step": 3,
+      "title": "Evidence Assembled",
+      "description": "The system gathers transaction records, communications, and delivery proof — formatted into compelling case files.",
+      "icon": "FileStack"
+    },
+    {
+      "step": 4,
+      "title": "Auto-Submit & Win",
+      "description": "AI predicts win probability and auto-submits optimized responses to banks and processors.",
+      "icon": "Rocket"
+    }
+  ],
+  "features": [
+    {
+      "icon": "Zap",
+      "title": "Automated Evidence Generation",
+      "description": "Collects and formats complete case files in seconds, not hours. AI-optimized templates match each reason code for maximum impact.",
+      "metric": "60s average"
+    },
+    {
+      "icon": "Cable",
+      "title": "API Integration Hub",
+      "description": "Syncs with Stripe, PayPal, Adyen, Square, and major banks automatically. One connection, complete data flow.",
+      "metric": "50+ integrations"
+    },
+    {
+      "icon": "Brain",
+      "title": "AI Outcome Prediction",
+      "description": "Forecasts dispute success using historical data and pattern recognition. Focus resources on winnable cases.",
+      "metric": "85% accuracy"
+    },
+    {
+      "icon": "BarChart3",
+      "title": "Smart Analytics Dashboard",
+      "description": "Visual trends, win rates, and financial impact at a glance. Real-time insights drive smarter decisions.",
+      "metric": "Real-time data"
+    },
+    {
+      "icon": "Shield",
+      "title": "Fraud Detection Engine",
+      "description": "Identifies fraud patterns before disputes occur. Proactive alerts reduce chargeback ratios dramatically.",
+      "metric": "73% reduction"
+    }
+  ],
+  "useCases": [
+    {
+      "title": "FinTechs",
+      "subtitle": "Scale Without Adding Staff",
+      "description": "Automate dispute management end-to-end. Handle 10X the volume with the same team.",
+      "metrics": ["90% time reduction", "45% better win rates", "Zero added headcount"],
+      "icon": "Building2"
+    },
+    {
+      "title": "Payment Processors",
+      "subtitle": "Enterprise Dispute Intelligence",
+      "description": "Automated merchant routing and AI-powered resolution for enterprise-scale operations.",
+      "metrics": ["3-day resolution vs 14", "Automated routing", "White-label ready"],
+      "icon": "Server"
+    },
+    {
+      "title": "E-Commerce",
+      "subtitle": "Fight Friendly Fraud",
+      "description": "Recover revenue from illegitimate chargebacks with AI-powered evidence and pattern detection.",
+      "metrics": ["70% recovery rate", "1.8% → 0.4% ratio", "$400K+ saved annually"],
+      "icon": "ShoppingCart"
+    },
+    {
+      "title": "Banks & Issuers",
+      "subtitle": "Streamline at Scale",
+      "description": "Process thousands of disputes daily with full compliance and audit trail automation.",
+      "metrics": ["40% faster resolution", "$400K annual savings", "Full compliance"],
+      "icon": "Landmark"
+    }
+  ],
+  "comparison": {
+    "headers": ["Capability", "Manual Processing", "OmniCharge AI"],
+    "rows": [
+      ["Time per dispute", "2-4 hours", "60 seconds"],
+      ["Evidence quality", "Inconsistent", "AI-optimized"],
+      ["Win prediction", "None", "85% accuracy"],
+      ["Processing speed", "1X baseline", "10X faster"],
+      ["Win rates", "Baseline", "2X improvement"],
+      ["Cost per dispute", "Full cost", "75% reduction"]
+    ]
+  },
+  "integrations": ["Stripe", "PayPal", "Adyen", "Square", "Visa", "Mastercard"],
+  "security": [
+    { "label": "SOC 2 Type II", "icon": "ShieldCheck" },
+    { "label": "PCI DSS", "icon": "Lock" },
+    { "label": "GDPR Ready", "icon": "Globe" },
+    { "label": "256-bit Encryption", "icon": "KeyRound" }
+  ],
+  "scalability": [
+    { "value": "10,000+", "label": "Disputes daily" },
+    { "value": "99.9%", "label": "Uptime SLA" },
+    { "value": "<100ms", "label": "API response" }
+  ],
+  "scheduleDemo": {
+    "title": "Schedule a Demo",
+    "subtitle": "Tell us a bit about yourself and we'll get back to you soon.",
+    "backToHome": "Back to home",
+    "form": {
+      "fullName": "Full name",
+      "workEmail": "Work email",
+      "company": "Company",
+      "phone": "Phone number",
+      "learn": "What would you like to learn?",
+      "learnPlaceholder": "e.g. How OmniCharge AI can help us automate chargebacks...",
+      "submit": "Request demo"
+    }
+  }
+}

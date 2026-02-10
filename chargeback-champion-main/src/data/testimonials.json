@@ -1,0 +1,30 @@
+[
+  {
+    "quote": "OmniCharge AI recovered $1.2M in the first quarter alone. The automated evidence generation is a game-changer for our finance team.",
+    "name": "Sarah Chen",
+    "title": "CFO",
+    "company": "NexPay Financial",
+    "metric": "$1.2M recovered"
+  },
+  {
+    "quote": "We went from 32% to 67% win rates with 94% automation. Our team now focuses on strategy instead of paperwork.",
+    "name": "Marcus Rivera",
+    "title": "VP Risk Management",
+    "company": "SwiftPay Solutions",
+    "metric": "67% win rate"
+  },
+  {
+    "quote": "Fraud-related chargebacks dropped 73% within 90 days. The predictive engine catches patterns we never could manually.",
+    "name": "Emily Zhang",
+    "title": "E-Commerce Director",
+    "company": "Luxe Retail Group",
+    "metric": "73% fraud reduction"
+  },
+  {
+    "quote": "Compliance is no longer a headache. Every dispute has a complete audit trail generated automatically — regulators love it.",
+    "name": "David Park",
+    "title": "Banking Ops Manager",
+    "company": "First Atlantic Bank",
+    "metric": "100% audit coverage"
+  }
+]
