@@ -12,12 +12,12 @@ export const siteContent = {
       { label: "Use Cases", href: "#use-cases" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    cta: { label: "Schedule a Demo", href: "#" },
   },
 
   hero: {
     primaryCta: { label: "Start Free Trial", href: "#cta" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: "Trusted by eCommerce brands, retailers, and fulfillment teams",
     stats: [
       { value: "Real-time", label: "Order Tracking" },
@@ -362,8 +362,8 @@ export const siteContent = {
     headlineAccent: "with Predictive Accuracy",
     description:
       "Join eCommerce brands and fulfillment teams who manage orders, inventory, and SLAs with one intelligent agent.",
-    primaryCta: { label: "Start Free Trial", href: "#" },
-    secondaryCta: { label: "See Live Demo", href: "#" },
+    primaryCta: { label: "Schedule a Demo", href: "#" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: [
       "No credit card required",
       "Free trial",
