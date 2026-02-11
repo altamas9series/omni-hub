@@ -37,6 +37,7 @@ export const siteContent = {
         headlineAccent: "Made Simple with AI",
         subheadline:
           "Connect Microsoft 365, Google Workspace, Notion & more — OmniSummarize AI transforms your scattered data into beautiful dashboards and actionable insights. No code. No setup headaches.",
+        image: "/hero/hero-section-one.png",
       },
       {
         badge: "10+ Integrations",
@@ -44,6 +45,7 @@ export const siteContent = {
         headlineAccent: "One Unified View",
         subheadline:
           "Bring together data from Microsoft 365, Google Workspace, Notion, and more. One agent, one dashboard — no copy-paste, no manual wrangling.",
+        image: "/hero/hero-section-two.png",
       },
       {
         badge: "From Zero to Insights",
@@ -51,6 +53,7 @@ export const siteContent = {
         headlineAccent: "in Minutes",
         subheadline:
           "Transform scattered data into actionable insights. Non-technical users build dashboards without IT backlogs. Decisions on real-time data, not gut feeling.",
+        image: "/hero/hero-section-three.png",
       },
     ],
   },

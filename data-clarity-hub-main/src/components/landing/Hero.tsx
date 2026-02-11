@@ -21,6 +21,7 @@ const slides =
           headline: hero.headline,
           headlineAccent: hero.headlineAccent,
           subheadline: hero.subheadline,
+          image: "/hero/hero-section-one.png",
         },
       ];
 
@@ -48,7 +49,7 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden soft-panel">
       <div className="absolute inset-0 hero-glow pointer-events-none z-0" />
-      <div className="absolute -right-16 top-24 h-80 w-80 rounded-full border-[46px] border-primary/10 pointer-events-none z-0" />
+      
 
       <Carousel
         setApi={setApi}
@@ -59,9 +60,15 @@ export default function Hero() {
           {slides.map((slide, index) => (
             <CarouselItem
               key={index}
-              className="pl-0 basis-full min-w-full w-full"
+              className="pl-0 basis-full min-w-full w-full relative"
             >
-              <div className="w-full min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-20">
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none z-0 opacity-30 blur-sm"
+                style={{
+                  backgroundImage: `url(${(slide as { image?: string }).image ?? ""})`,
+                }}
+              />
+              <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-20">
                 <div className="max-w-4xl mx-auto text-center w-full">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}

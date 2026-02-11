@@ -48,7 +48,7 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden soft-panel">
       <div className="absolute inset-0 hero-glow pointer-events-none z-0" />
-      <div className="absolute -right-16 top-24 h-80 w-80 rounded-full border-[46px] border-primary/10 pointer-events-none z-0" />
+      
 
       <Carousel
         setApi={setApi}
