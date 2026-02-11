@@ -118,12 +118,12 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.25 }}
-                    className="mt-10 max-w-4xl mx-auto rounded-2xl blue-band border border-primary/40 shadow-xl overflow-hidden grid grid-cols-2 md:grid-cols-4"
+                    className="mt-10 w-full max-w-4xl mx-auto rounded-2xl blue-band border border-primary/40 shadow-xl overflow-hidden flex flex-wrap"
                   >
-                    {hero.stats.map((stat, i) => (
+                    {(hero.stats ?? []).map((stat, i) => (
                       <div
-                        key={i}
-                        className="p-5 text-center text-white/95 border-r border-white/20 last:border-r-0"
+                        key={stat.label ?? i}
+                        className="flex-1 min-w-[120px] p-5 text-center text-white/95 border-r border-white/20 last:border-r-0"
                       >
                         <div className="text-2xl md:text-3xl font-bold">
                           {stat.value}
