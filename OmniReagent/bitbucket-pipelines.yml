@@ -1,0 +1,14 @@
+image: atlassian/default-image:3
+
+definitions:
+  steps:
+    - step: &deploy-step
+        name: 'Push to Github'
+        deployment: Staging
+        script:
+          - git push --force https://$gituser:$gitpass@github.com/$gituser/docusense-frontend.git $BITBUCKET_BRANCH:main
+
+pipelines:
+  branches:
+    staging:
+      - step: *deploy-step

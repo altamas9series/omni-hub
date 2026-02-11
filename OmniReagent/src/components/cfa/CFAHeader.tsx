@@ -1,0 +1,188 @@
+import { useCFA } from "@/contexts/CFAContext";
+import { Search, Clock, AlertTriangle, FileText, FlaskConical, Building2, X } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import { useEffect, useRef } from "react";
+import { NotificationPopover } from "./NotificationPopover";
+import { UserDropdown } from "./UserDropdown";
+
+export function CFAHeader() {
+  const { 
+    stats, 
+    searchQuery, 
+    setSearchQuery, 
+    searchResults, 
+    searchOpen, 
+    setSearchOpen,
+    setCurrentView,
+    setSelectedChemical,
+    chemicalRecords,
+    setInvestigationDrawerOpen,
+    setDashboardFilter
+  } = useCFA();
+  
+  const searchRef = useRef<HTMLDivElement>(null);
+  
+  // Calculate days until Oct 13, 2026
+  const deadline = new Date("2026-10-13");
+  const today = new Date();
+  const daysRemaining = Math.ceil((deadline.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+
+  // Close search when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setSearchOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [setSearchOpen]);
+
+  const handleResultClick = (result: typeof searchResults[0]) => {
+    setSearchOpen(false);
+    setSearchQuery("");
+    
+    switch (result.type) {
+      case "chemical":
+        const chemical = chemicalRecords.find(c => c.id === result.id);
+        if (chemical) {
+          setSelectedChemical(chemical);
+          setInvestigationDrawerOpen(true);
+          setCurrentView("detective");
+        }
+        break;
+      case "document":
+        setCurrentView("archaeologist");
+        break;
+      case "supplier":
+        setCurrentView("detective");
+        break;
+    }
+  };
+
+  const handleGapsClick = () => {
+    setDashboardFilter({ type: "gaps" });
+    setCurrentView("detective");
+  };
+
+  const getResultIcon = (type: string) => {
+    switch (type) {
+      case "chemical": return <FlaskConical className="w-4 h-4 text-rose-500" />;
+      case "document": return <FileText className="w-4 h-4 text-blue-500" />;
+      case "supplier": return <Building2 className="w-4 h-4 text-status-success" />;
+      default: return null;
+    }
+  };
+
+  return (
+    <header className="h-16 bg-white border-b border-slate-200 px-6 flex items-center justify-between">
+      {/* Left: Title and Deadline */}
+      <div className="flex items-center gap-6">
+        <div>
+          <h1 className="text-lg font-semibold text-slate-900">PFAS Intelligence Platform</h1>
+          <p className="text-xs text-slate-500">EPA TSCA Section 8(a)(7) Compliance</p>
+        </div>
+        
+        <div className="flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-lg px-3 py-1.5">
+          <Clock className="w-4 h-4 text-amber-600" />
+          <div className="text-sm">
+            <span className="text-slate-600">Deadline: </span>
+            <span className="font-semibold text-amber-700">Oct 13, 2026</span>
+          </div>
+          <Badge className="bg-amber-100 text-amber-800 border border-amber-200 ml-1">
+            {daysRemaining} Days
+          </Badge>
+        </div>
+      </div>
+
+      {/* Center: Search */}
+      <div className="flex-1 max-w-md mx-8 relative" ref={searchRef}>
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+          <Input 
+            placeholder="Search CAS #, Product, or Supplier..."
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setSearchOpen(true);
+            }}
+            onFocus={() => searchQuery && setSearchOpen(true)}
+            className="pl-10 pr-8 bg-slate-50 border-slate-200 focus:bg-white text-slate-900 placeholder:text-slate-400"
+          />
+          {searchQuery && (
+            <button 
+              onClick={() => { setSearchQuery(""); setSearchOpen(false); }}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          )}
+        </div>
+        
+        {/* Search Results Dropdown */}
+        {searchOpen && searchResults.length > 0 && (
+          <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg z-50 overflow-hidden">
+            <div className="p-2 text-xs text-slate-500 border-b border-slate-100 bg-slate-50">
+              {searchResults.length} results found
+            </div>
+            <div className="max-h-80 overflow-y-auto">
+              {searchResults.map((result) => (
+                <button
+                  key={`${result.type}-${result.id}`}
+                  onClick={() => handleResultClick(result)}
+                  className="w-full flex items-center gap-3 px-4 py-3 hover:bg-slate-50 text-left transition-colors border-b border-slate-50 last:border-0"
+                >
+                  {getResultIcon(result.type)}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-slate-800 truncate">{result.title}</p>
+                    <p className="text-xs text-slate-500 truncate">{result.subtitle}</p>
+                  </div>
+                  {result.score !== undefined && (
+                    <Badge className={cn(
+                      "shrink-0 border",
+                      result.score >= 80 ? "bg-rose-100 text-rose-700 border-rose-200" :
+                      result.score >= 50 ? "bg-amber-100 text-amber-700 border-amber-200" :
+                      "bg-status-success-bg text-status-success-text border-status-success/30"
+                    )}>
+                      {result.score}/100
+                    </Badge>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {searchOpen && searchQuery && searchResults.length === 0 && (
+          <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-lg z-50 p-4 text-center text-slate-500 text-sm">
+            No results found for "{searchQuery}"
+          </div>
+        )}
+      </div>
+
+      {/* Right: Notifications and Profile */}
+      <div className="flex items-center gap-4">
+        {/* Quick Stats Alert */}
+        {stats.dataGaps > 0 && (
+          <button 
+            onClick={handleGapsClick}
+            className="flex items-center gap-2 text-sm hover:bg-amber-50 px-3 py-1.5 rounded-lg transition-colors border border-transparent hover:border-amber-200"
+          >
+            <AlertTriangle className="w-4 h-4 text-amber-500" />
+            <span className="text-slate-600">
+              <span className="font-semibold text-amber-600">{stats.dataGaps}</span> gaps need attention
+            </span>
+          </button>
+        )}
+
+        {/* Notifications */}
+        <NotificationPopover />
+
+        {/* User Profile */}
+        <UserDropdown />
+      </div>
+    </header>
+  );
+}
