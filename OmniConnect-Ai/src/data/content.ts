@@ -12,7 +12,7 @@ export const siteContent = {
       { label: "Use Cases", href: "#use-cases" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    cta: { label: "Schedule a Demo", href: "#" },
   },
 
   hero: {
@@ -27,7 +27,7 @@ export const siteContent = {
     subheadline:
       "AI-driven business development agent that identifies high-potential clients, analyzes market activity, and engages decision-makers with personalized multi-channel outreach — turning manual prospecting into autonomous pipeline growth.",
     primaryCta: { label: "See It in Action", href: "#cta" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: "Built for recruitment, HR, and B2B service teams that need scalable pipeline",
     stats: [
       { value: "ICP", label: "Lead Gen" },
@@ -374,7 +374,7 @@ export const siteContent = {
     description:
       "Deploy OmniConnect AI to source ICP-fit prospects, detect intent, engage decision makers, and book meetings while keeping your CRM in sync.",
     primaryCta: { label: "See a Live Demo", href: "#" },
-    secondaryCta: { label: "Talk to Us", href: "/schedule-demo" },
+    secondaryCta: { label: "Talk to Us", href: "#" },
     trust: [
       "ICP-based lead generation",
       "Market research & intent detection",
@@ -391,7 +391,7 @@ export const siteContent = {
           { label: "How It Works", href: "#how-it-works" },
           { label: "Features", href: "#features" },
           { label: "Integrations", href: "#" },
-          { label: "Demo", href: "/schedule-demo" },
+          { label: "Demo", href: "#" },
         ],
       },
       {

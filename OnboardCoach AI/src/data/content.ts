@@ -12,7 +12,7 @@ export const siteContent = {
       { label: "Use Cases", href: "#use-cases" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    cta: { label: "Schedule a Demo", href: "#" },
   },
 
   hero: {
@@ -27,7 +27,7 @@ export const siteContent = {
     subheadline:
       "Personalized AI training coach that designs learning paths, generates dynamic assessments, and evaluates learner performance. Accelerates onboarding and continuous learning within HR ecosystems.",
     primaryCta: { label: "Start Free Trial", href: "#cta" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: "Trusted by HR and L&D teams for corporate onboarding and skill-based training",
     stats: [
       { value: "Persona-Based", label: "Learning Paths" },
@@ -370,7 +370,7 @@ export const siteContent = {
     description:
       "Join HR and L&D teams using OnboardCoach AI for personalized learning paths, dynamic assessments, and certification automation. Accelerate onboarding and continuous learning.",
     primaryCta: { label: "Start Free Trial", href: "#" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: [
       "Persona-based learning from your content",
       "Auto-generated quizzes & scenario-based tests",
@@ -387,7 +387,7 @@ export const siteContent = {
           { label: "How It Works", href: "#how-it-works" },
           { label: "Features", href: "#features" },
           { label: "Security", href: "#" },
-          { label: "Demo", href: "/schedule-demo" },
+          { label: "Demo", href: "#" },
         ],
       },
       {

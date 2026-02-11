@@ -12,7 +12,7 @@ export const siteContent = {
       { label: "Use Cases", href: "#use-cases" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    cta: { label: "Schedule a Demo", href: "#" },
   },
 
   hero: {
@@ -22,7 +22,7 @@ export const siteContent = {
     subheadline:
       "Connect Microsoft 365, Google Workspace, Notion & more — OmniSummarize AI transforms your scattered data into beautiful dashboards and actionable insights. No code. No setup headaches.",
     primaryCta: { label: "Start Free Trial", href: "#cta" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: "Trusted by teams across consulting, finance, and enterprise sectors",
     stats: [
       { value: "10+", label: "Integrations" },

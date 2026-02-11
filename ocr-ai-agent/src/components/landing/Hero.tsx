@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { siteContent } from "@/data/content";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -46,8 +46,9 @@ export default function Hero() {
   }, [api]);
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-section-alt">
+    <section className="relative w-full min-h-screen overflow-hidden soft-panel">
       <div className="absolute inset-0 hero-glow pointer-events-none z-0" />
+      <div className="absolute -right-16 top-24 h-80 w-80 rounded-full border-[46px] border-primary/10 pointer-events-none z-0" />
 
       <Carousel
         setApi={setApi}
@@ -60,15 +61,14 @@ export default function Hero() {
               key={index}
               className="pl-0 basis-full min-w-full w-full"
             >
-              <div className="w-full min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-16">
+              <div className="w-full min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-20">
                 <div className="max-w-4xl mx-auto text-center w-full">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-destructive/10 text-destructive text-sm font-medium mb-8"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium uppercase tracking-wider mb-6"
                   >
-                    <span className="w-2 h-2 rounded-full bg-destructive animate-pulse" />
                     {slide.badge}
                   </motion.div>
 
@@ -76,10 +76,9 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.05 }}
-                    className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-tight"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight"
                   >
-                    {slide.headline}
-                    <br />
+                    {slide.headline}{" "}
                     <span className="gradient-text">{slide.headlineAccent}</span>
                   </motion.h1>
 
@@ -98,17 +97,10 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.15 }}
                     className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
                   >
-                    <a
-                      href={hero.primaryCta.href}
-                      className="px-8 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:opacity-90 transition-opacity flex items-center gap-2 glow-border"
-                    >
-                      {hero.primaryCta.label}
-                      <ArrowRight size={18} />
-                    </a>
                     {hero.secondaryCta.href.startsWith("/") ? (
                       <Link
                         to={hero.secondaryCta.href}
-                        className="px-8 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:opacity-90 transition-opacity flex items-center gap-2"
+                        className="px-8 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:opacity-90 transition-opacity flex items-center gap-2 glow-border"
                       >
                         <Calendar size={18} />
                         {hero.secondaryCta.label}
@@ -116,7 +108,7 @@ export default function Hero() {
                     ) : (
                       <a
                         href={hero.secondaryCta.href}
-                        className="px-8 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:opacity-90 transition-opacity flex items-center gap-2"
+                        className="px-8 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:opacity-90 transition-opacity flex items-center gap-2 glow-border"
                       >
                         <Calendar size={18} />
                         {hero.secondaryCta.label}
@@ -137,17 +129,17 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.25 }}
-                    className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto"
+                    className="mt-10 max-w-4xl mx-auto rounded-2xl blue-band border border-primary/40 shadow-xl overflow-hidden grid grid-cols-2 md:grid-cols-4"
                   >
                     {hero.stats.map((s) => (
                       <div
                         key={s.label}
-                        className="p-4 rounded-xl bg-surface-elevated border border-border text-center"
+                        className="p-5 text-center text-white/95 border-r border-white/20 last:border-r-0"
                       >
-                        <div className="text-2xl md:text-3xl font-bold gradient-text">
+                        <div className="text-2xl md:text-3xl font-bold ">
                           {s.value}
                         </div>
-                        <div className="text-xs text-muted-foreground mt-1">
+                        <div className="text-xs text-white/85 mt-1">
                           {s.label}
                         </div>
                       </div>

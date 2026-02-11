@@ -12,12 +12,12 @@ export const siteContent = {
       { label: "Use Cases", href: "#use-cases" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    cta: { label: "Schedule a Demo", href: "#" },
   },
 
   hero: {
     primaryCta: { label: "Start Free Trial", href: "#cta" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: "Trusted by utility providers, telecom, banking, and HR helpdesks for 24/7 conversational support",
     stats: [
       { value: "Multilingual", label: "Real-Time Support" },

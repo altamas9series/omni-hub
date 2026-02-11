@@ -1,9 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
 import data from "@/data/landingPage.json";
 import {
   Carousel,
@@ -57,12 +55,9 @@ const HeroSection = () => {
   }, [api]);
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
-      </div>
+    <section className="relative w-full min-h-screen overflow-hidden soft-panel">
+      <div className="absolute inset-0 hero-glow pointer-events-none z-0" />
+      <div className="absolute -right-16 top-24 h-80 w-80 rounded-full border-[46px] border-primary/10 pointer-events-none z-0" />
 
       <Carousel
         setApi={setApi}
@@ -80,24 +75,20 @@ const HeroSection = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-8"
+                    transition={{ duration: 0.5 }}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-medium uppercase tracking-wider mb-6"
                   >
-                    <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm">
-                      <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
-                      <span className="text-muted-foreground">{slide.badge}</span>
-                    </div>
+                    {slide.badge}
                   </motion.div>
 
                   <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.05 }}
-                    className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
+                    transition={{ duration: 0.5, delay: 0.05 }}
+                    className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight"
                   >
-                    {slide.mainHeadline}
-                    <br />
-                    <span className="text-gradient">{slide.highlightedText}</span>
+                    {slide.mainHeadline}{" "}
+                    <span className="gradient-text">{slide.highlightedText}</span>
                   </motion.h1>
 
                   <motion.p
@@ -115,32 +106,29 @@ const HeroSection = () => {
                     transition={{ duration: 0.6, delay: 0.15 }}
                     className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
                   >
-                    <Button asChild size="lg" className="text-base px-8 py-6 glow-border">
-                      <a href="#cta">
-                        {hero.ctaPrimary}
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </a>
-                    </Button>
-                    <Button asChild size="lg" className="text-base px-8 py-6 bg-primary text-primary-foreground hover:opacity-90">
-                      <Link to="/schedule-demo">
+                    <Button asChild size="lg" className="text-base px-8 py-6 bg-primary text-primary-foreground hover:opacity-90 glow-border">
+                      <a href="#">
                         <Calendar className="mr-2 h-5 w-5" />
                         {hero.ctaSecondary}
-                      </Link>
+                      </a>
                     </Button>
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.2 }}
-                    className="grid grid-cols-3 gap-6 max-w-2xl mx-auto"
+                    transition={{ duration: 0.5, delay: 0.25 }}
+                    className="mt-10 max-w-4xl mx-auto rounded-2xl blue-band border border-primary/40 shadow-xl overflow-hidden grid grid-cols-2 md:grid-cols-4"
                   >
                     {hero.stats.map((stat, i) => (
-                      <div key={i} className="text-center">
-                        <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gradient mb-1">
+                      <div
+                        key={i}
+                        className="p-5 text-center text-white/95 border-r border-white/20 last:border-r-0"
+                      >
+                        <div className="text-2xl md:text-3xl font-bold">
                           {stat.value}
                         </div>
-                        <div className="text-sm text-muted-foreground">
+                        <div className="text-xs text-white/85 mt-1">
                           {stat.label}
                         </div>
                       </div>

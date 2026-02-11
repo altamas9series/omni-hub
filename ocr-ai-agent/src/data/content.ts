@@ -12,7 +12,7 @@ export const siteContent = {
       { label: "Use Cases", href: "#use-cases" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    cta: { label: "Schedule a Demo", href: "#" },
   },
 
   hero: {
@@ -27,7 +27,7 @@ export const siteContent = {
     subheadline:
       "Layout-aware OCR that enables data digitization, form extraction, and validation at scale. From identity forms to compliance records — capture every field accurately and push data straight into your systems.",
     primaryCta: { label: "Start Free Trial", href: "#cta" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: "Trusted by government, financial, and industrial organizations",
     stats: [
       { value: "99%+", label: "OCR Accuracy" },

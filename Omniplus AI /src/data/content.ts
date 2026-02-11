@@ -12,7 +12,7 @@ export const siteContent = {
       { label: "Use Cases", href: "#use-cases" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    cta: { label: "Schedule a Demo", href: "#" },
   },
 
   hero: {
@@ -27,7 +27,7 @@ export const siteContent = {
     subheadline:
       "Comprehensive banking analytics platform that aggregates transaction data, account metrics, and branch performance indicators into actionable insights. Real-time dashboards, trend analysis, and natural language querying for executives and analysts.",
     primaryCta: { label: "Start Free Trial", href: "#cta" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: "Trusted by banks and financial institutions for branch performance and strategic planning",
     stats: [
       { value: "Real-time", label: "Dashboards" },
@@ -370,7 +370,7 @@ export const siteContent = {
     description:
       "Join banks and financial institutions using Omniplus AI for real-time dashboards, trend analysis, and natural language querying. Turn transaction and account data into strategic insights.",
     primaryCta: { label: "Start Free Trial", href: "#" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: [
       "Built for financial services",
       "Real-time transaction & branch analytics",
@@ -387,7 +387,7 @@ export const siteContent = {
           { label: "How It Works", href: "#how-it-works" },
           { label: "Features", href: "#features" },
           { label: "Security", href: "#" },
-          { label: "Demo", href: "/schedule-demo" },
+          { label: "Demo", href: "#" },
         ],
       },
       {

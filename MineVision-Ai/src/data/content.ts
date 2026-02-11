@@ -12,7 +12,7 @@ export const siteContent = {
       { label: "Use Cases", href: "#use-cases" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    cta: { label: "Schedule a Demo", href: "#" },
   },
 
   hero: {
@@ -27,7 +27,7 @@ export const siteContent = {
     subheadline:
       "MineVision AI fuses computer vision and IoT signals to detect hazards, monitor PPE and zones, and surface predictive insights that reduce incidents, downtime, and compliance risk.",
     primaryCta: { label: "See It in Action", href: "#cta" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: "Built for mining and heavy industries needing continuous safety assurance",
     stats: [
       { value: "24/7", label: "Computer Vision" },
@@ -367,7 +367,7 @@ export const siteContent = {
     description:
       "Deploy MineVision AI to detect hazards sooner, enforce PPE and zone rules automatically, and keep production running safely.",
     primaryCta: { label: "See a Live Demo", href: "#" },
-    secondaryCta: { label: "Talk to Us", href: "/schedule-demo" },
+    secondaryCta: { label: "Talk to Us", href: "#" },
     trust: [
       "Computer vision PPE & zone compliance",
       "Sensor fusion for hazard detection",
@@ -384,7 +384,7 @@ export const siteContent = {
           { label: "How It Works", href: "#how-it-works" },
           { label: "Features", href: "#features" },
           { label: "Integrations", href: "#" },
-          { label: "Demo", href: "/schedule-demo" },
+          { label: "Demo", href: "#" },
         ],
       },
       {

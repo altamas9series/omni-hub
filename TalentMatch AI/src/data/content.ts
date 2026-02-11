@@ -12,7 +12,7 @@ export const siteContent = {
       { label: "Use Cases", href: "#use-cases" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    cta: { label: "Schedule a Demo", href: "#" },
   },
 
   hero: {
@@ -27,7 +27,7 @@ export const siteContent = {
     subheadline:
       "End-to-end recruitment intelligence that parses resumes, matches candidates to job descriptions, and automates first-round assessments to accelerate shortlisting and improve hiring quality.",
     primaryCta: { label: "See It in Action", href: "#cta" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: "Built for recruitment teams, high-volume hiring, and internal mobility",
     stats: [
       { value: "AI", label: "Resume Parsing" },
@@ -367,7 +367,7 @@ export const siteContent = {
     description:
       "Deploy TalentMatch AI to parse resumes, rank candidates by fit, automate outreach and scheduling, and deliver faster shortlists with higher quality.",
     primaryCta: { label: "See a Live Demo", href: "#" },
-    secondaryCta: { label: "Talk to Us", href: "/schedule-demo" },
+    secondaryCta: { label: "Talk to Us", href: "#" },
     trust: [
       "Resume parsing & JD matching",
       "Predictive fit scoring & ranking",
@@ -384,7 +384,7 @@ export const siteContent = {
           { label: "How It Works", href: "#how-it-works" },
           { label: "Features", href: "#features" },
           { label: "Integrations", href: "#" },
-          { label: "Demo", href: "/schedule-demo" },
+          { label: "Demo", href: "#" },
         ],
       },
       {

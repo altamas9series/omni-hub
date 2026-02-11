@@ -23,13 +23,13 @@ const Navbar = () => {
           <a href="#cta" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">
             Sign In
           </a>
-          <Link
-            to="/schedule-demo"
+          <a
+            href="#"
             className="text-sm font-medium bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2"
           >
             <Calendar size={14} />
             Schedule a Demo
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

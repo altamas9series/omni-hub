@@ -12,7 +12,7 @@ export const siteContent = {
       { label: "Use Cases", href: "#use-cases" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    cta: { label: "Schedule a Demo", href: "#" },
   },
 
   hero: {
@@ -27,7 +27,7 @@ export const siteContent = {
     subheadline:
       "ClauseCraft AI extracts clauses, obligations, risks, and changes to generate concise, actionable summaries. Accelerate contract review, ensure compliance, and reduce legal oversight risk.",
     primaryCta: { label: "See It in Action", href: "#cta" },
-    secondaryCta: { label: "Schedule a Demo", href: "/schedule-demo" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: "Built for legal, compliance, procurement, and audit teams",
     stats: [
       { value: "AI", label: "Clause Extraction" },
@@ -367,7 +367,7 @@ export const siteContent = {
     description:
       "Deploy ClauseCraft AI to extract clauses, score risk, detect changes, and deliver concise summaries so reviews finish faster with fewer misses.",
     primaryCta: { label: "See a Live Demo", href: "#" },
-    secondaryCta: { label: "Talk to Us", href: "/schedule-demo" },
+    secondaryCta: { label: "Talk to Us", href: "#" },
     trust: [
       "Clause & obligation extraction",
       "Change and deviation detection",
@@ -384,7 +384,7 @@ export const siteContent = {
           { label: "How It Works", href: "#how-it-works" },
           { label: "Features", href: "#features" },
           { label: "Integrations", href: "#" },
-          { label: "Demo", href: "/schedule-demo" },
+          { label: "Demo", href: "#" },
         ],
       },
       {
