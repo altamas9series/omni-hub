@@ -9,7 +9,7 @@ import ComparisonSection from "@/components/landing/ComparisonSection";
 import IntegrationsSection from "@/components/landing/IntegrationsSection";
 import FAQSection from "@/components/landing/FAQSection";
 import CTASection from "@/components/landing/CTASection";
-import FooterSection from "@/components/landing/FooterSection";
+import Footer from "@/components/landing/Footer";
 
 const Index = () => {
   return (
@@ -31,7 +31,7 @@ const Index = () => {
         <FAQSection />
       </div>
       <CTASection />
-      <FooterSection />
+      <Footer />
     </div>
   );
 };

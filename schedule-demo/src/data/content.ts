@@ -366,8 +366,8 @@ export const siteContent = {
     headlineAccent: "for HR & Talent Teams",
     description:
       "Deploy TalentMatch AI to parse resumes, rank candidates by fit, automate outreach and scheduling, and deliver faster shortlists with higher quality.",
-    primaryCta: { label: "See a Live Demo", href: "#" },
-    secondaryCta: { label: "Talk to Us", href: "#" },
+    primaryCta: { label: "Schedule a Demo", href: "#" },
+    secondaryCta: { label: "Schedule a Demo", href: "#" },
     trust: [
       "Resume parsing & JD matching",
       "Predictive fit scoring & ranking",
