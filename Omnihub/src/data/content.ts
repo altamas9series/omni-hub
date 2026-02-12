@@ -48,13 +48,6 @@ export const siteContent = {
         description:
           "Detects sentiment and context so responses match the moment. Calm reassurance when needed, clarity when things are urgent — better conversations, better outcomes.",
       },
-      {
-        badge: "CONVERSATIONAL KNOWLEDGE COMPANION",
-        headline: "Seamless Handover",
-        headlineAccent: "When Escalation Is Needed",
-        description:
-          "When a human agent is needed, handover is smooth and contextual. One intelligent companion across channels — for utilities, government, telecom, banking, and internal helpdesks.",
-      },
     ],
   },
 
