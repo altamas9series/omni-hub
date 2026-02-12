@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import ReCAPTCHA from "react-google-recaptcha";
 import { siteContent } from "@/data/content";
 import { Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 const { scheduleDemo } = siteContent;
+
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY ?? "";
 
 const scheduleFormSchema = Yup.object().shape({
   fullName: Yup.string()
@@ -25,6 +28,9 @@ const scheduleFormSchema = Yup.object().shape({
     .required("Company is required"),
   phone: Yup.string().trim(),
   learn: Yup.string().trim(),
+  recaptchaToken: RECAPTCHA_SITE_KEY
+    ? Yup.string().required("Please complete the captcha")
+    : Yup.string(),
 });
 
 type ScheduleFormValues = Yup.InferType<typeof scheduleFormSchema>;
@@ -35,6 +41,7 @@ const initialValues: ScheduleFormValues = {
   company: "",
   phone: "",
   learn: "",
+  recaptchaToken: "",
 };
 
 export default function ScheduleDemo() {
@@ -68,10 +75,11 @@ export default function ScheduleDemo() {
             initialValues={initialValues}
             validationSchema={scheduleFormSchema}
             onSubmit={(values) => {
+              // Send values to your API; verify recaptchaToken server-side with Google's verify API
               console.log("Schedule demo submitted:", values);
             }}
           >
-            {({ errors, touched, isSubmitting }) => (
+            {({ setFieldValue, setFieldTouched, errors, touched, isSubmitting }) => (
               <Form className="flex flex-col gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="fullName">
@@ -166,6 +174,27 @@ export default function ScheduleDemo() {
                     className="text-sm text-destructive"
                   />
                 </div>
+
+                {RECAPTCHA_SITE_KEY && (
+                  <div className="space-y-2">
+                    <ReCAPTCHA
+                      sitekey={RECAPTCHA_SITE_KEY}
+                      onChange={(token) => {
+                        setFieldValue("recaptchaToken", token ?? "");
+                        setFieldTouched("recaptchaToken", true);
+                      }}
+                      onExpired={() => setFieldValue("recaptchaToken", "")}
+                      onErrored={() => setFieldValue("recaptchaToken", "")}
+                      theme="light"
+                      size="normal"
+                    />
+                    <ErrorMessage
+                      name="recaptchaToken"
+                      component="p"
+                      className="text-sm text-destructive"
+                    />
+                  </div>
+                )}
 
                 <Button
                   type="submit"
