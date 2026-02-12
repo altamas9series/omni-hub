@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
-import { Plug, Radar, FileStack, Rocket } from "lucide-react";
+import type { ElementType } from "react";
+import { Plug, Radar, FileStack, Rocket, FileText } from "lucide-react";
 import data from "@/data/landingPage.json";
 
-const iconMap: Record<string, React.FC<{ className?: string }>> = {
-  Plug, Radar, FileStack, Rocket,
+const iconMap: Record<string, ElementType> = {
+  Plug,
+  Radar,
+  FileStack,
+  Rocket,
+  FileText,
 };
 
 const HowItWorksSection = () => {
@@ -31,7 +36,7 @@ const HowItWorksSection = () => {
 
           <div className="space-y-12 lg:space-y-16">
             {data.howItWorks.map((step, i) => {
-              const Icon = iconMap[step.icon];
+              const Icon = iconMap[step.icon] ?? FileText;
               const isEven = i % 2 === 0;
               return (
                 <motion.div
@@ -54,7 +59,7 @@ const HowItWorksSection = () => {
                   </div>
 
                   <div className="w-20 h-20 rounded-2xl glass glow-border flex items-center justify-center shrink-0">
-                    {Icon && <Icon className="h-8 w-8 text-primary" />}
+                    <Icon className="h-8 w-8 text-primary" />
                   </div>
 
                   <div className="flex-1 hidden lg:block" />

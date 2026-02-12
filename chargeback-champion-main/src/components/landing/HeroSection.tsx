@@ -9,6 +9,11 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import heroSectionOne from "@/assets/hero-section-one.png";
+import heroSectionTwo from "@/assets/hero-section-two.png";
+import heroSectionThree from "@/assets/hero-section-three.png";
+
+const heroImages = [heroSectionOne, heroSectionTwo, heroSectionThree];
 
 const hero = data.hero as {
   rotatingHeadlines?: string[];
@@ -68,9 +73,15 @@ const HeroSection = () => {
           {slides.map((slide, index) => (
             <CarouselItem
               key={index}
-              className="pl-0 basis-full min-w-full w-full"
+              className="pl-0 basis-full min-w-full w-full relative"
             >
-              <div className="w-full min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-20">
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none z-0 opacity-30 blur-sm"
+                style={{
+                  backgroundImage: `url(${heroImages[index % heroImages.length]})`,
+                }}
+              />
+              <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-20">
                 <div className="container mx-auto text-center max-w-5xl">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
