@@ -1,9 +1,23 @@
 import { siteContent } from "@/data/content";
 import { motion } from "framer-motion";
-import { Plug, Brain, MessageSquare, BarChart3, FileStack, Send } from "lucide-react";
+import {
+  Upload,
+  Route,
+  HelpCircle,
+  Award,
+  MessageSquare,
+  FileText,
+} from "lucide-react";
 import type { ElementType } from "react";
 
-const iconMap: Record<string, ElementType> = { Plug, Brain, MessageSquare, BarChart3, FileStack, Send };
+const iconMap: Record<string, ElementType> = {
+  Upload,
+  Route,
+  HelpCircle,
+  Award,
+  MessageSquare,
+  FileText,
+};
 const { howItWorks, brand } = siteContent;
 
 export default function HowItWorks() {
@@ -38,7 +52,7 @@ export default function HowItWorks() {
 
           <div className="space-y-12 lg:space-y-16">
             {howItWorks.steps.map((step, i) => {
-              const Icon = iconMap[step.icon] || Plug;
+              const Icon = iconMap[step.icon] ?? FileText;
               const isEven = i % 2 === 0;
 
               return (
