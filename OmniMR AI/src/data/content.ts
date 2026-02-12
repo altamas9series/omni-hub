@@ -143,7 +143,7 @@ export const siteContent = {
       },
       {
         step: "04",
-        icon: "Send",
+        icon: "LayoutDashboard",
         title: "Interactive Dashboards & Reports",
         description:
           "Build and share visualization dashboards. Trend detection and insight generation keep stakeholders informed with minimal manual reporting.",
