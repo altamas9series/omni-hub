@@ -3,9 +3,19 @@ import { Link } from "react-router-dom";
 import { siteContent } from "@/data/content";
 import { motion } from "framer-motion";
 import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
-import type { CarouselApi } from "@/components/ui/carousel";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import heroSectionOne from "@/assets/hero-section-one.png";
+import heroSectionTwo from "@/assets/hero-section-two.png";
+import heroSectionThree from "@/assets/hero-section-three.png";
+import heroSectionFour from "@/assets/hero-section-four.png";
+
+const heroImages = [heroSectionOne, heroSectionTwo, heroSectionThree, heroSectionFour];
 
 const { hero } = siteContent;
 const slides =
@@ -24,7 +34,7 @@ const slides =
 const AUTOPLAY_MS = 6000;
 
 export default function Hero() {
-  const [api, setApi] = useState<CarouselApi>(undefined);
+  const [api, setApi] = useState<CarouselApi | undefined>(undefined);
   const [current, setCurrent] = useState(0);
 
   const scrollPrev = useCallback(() => api?.scrollPrev(), [api]);
@@ -56,9 +66,15 @@ export default function Hero() {
           {slides.map((slide, index) => (
             <CarouselItem
               key={index}
-              className="pl-0 basis-full min-w-full w-full"
+              className="pl-0 basis-full min-w-full w-full relative"
             >
-              <div className="w-full min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-20">
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none z-0 opacity-30 blur-sm"
+                style={{
+                  backgroundImage: `url(${heroImages[index % heroImages.length]})`,
+                }}
+              />
+              <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-20">
                 <div className="max-w-4xl mx-auto text-center w-full">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
